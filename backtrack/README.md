@@ -39,8 +39,8 @@
         makemove()
         backtrack(k)
         unmake_move()
-        if finished：
-        return 
+        if finished:
+          return
   ```
 
   ​
