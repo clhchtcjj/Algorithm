@@ -3,7 +3,7 @@ __author__ = 'CLH'
 '''
     这题说白了就是统计不同单词数
     用前缀树加快搜索
-    注意点：python如果读取多行输入
+    注意点：python如何读取多行输入
 '''
 import sys
 class TrieNode():
