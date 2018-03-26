@@ -54,6 +54,8 @@ class Solution():
 
     # 全排列思想
     def fullPermutation(self,n,k):
+        if n <=0:
+            return
         if k == n:
             self.printAns()
         else:
@@ -67,4 +69,4 @@ class Solution():
 
 if __name__ == "__main__":
     S = Solution()
-    S.fullPermutation(3,0)
+    S.fullPermutation(-1,0)
