@@ -7,6 +7,8 @@ class Solution():
         self.ans = "0"
 
     def printOneToN(self,n):
+        if n <= 0:
+            raise RuntimeError("n is zero or negative numbers")
         k = n - 1
         max_str = "9"*n
         self.ans = "0"*n
@@ -43,4 +45,4 @@ class Solution():
 
 if __name__ == "__main__":
     S = Solution()
-    S.printOneToN(3)
+    S.printOneToN(0)
