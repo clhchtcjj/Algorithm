@@ -92,8 +92,8 @@ class Solution():
                 self.answer[index] = 1
                 self.backtrack(n-1,index)
                 self.answer[index] = 0
-                if n == 0:
-                    return
+                # if n == 0:
+                #     return
 
     def readBinaryWatch(self, num):
         """
