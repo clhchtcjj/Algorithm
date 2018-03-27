@@ -50,6 +50,33 @@ class Solution(object):
             node.next = node.next.next
         return head
 
+    def sortedDuplicatedElements(self,head):
+        '''
+        有序链表中删除重复的元素
+        :param head:
+        :return:
+        '''
+        pre,curr = None,head
+        flag = False
+        while curr:
+            if curr.next and curr.val == curr.next.val: # 尾节点是重复节点
+                flag = True # 标记是否有重复的
+                curr = curr.next
+            else:
+                if flag:
+                    if pre:
+                        pre.next = curr.next
+                        curr = curr.next
+                    else:
+                        head = curr.next # 处理头指针
+                        curr = curr.next
+                else:
+                    pre,curr = curr,curr.next
+                flag = False # 处理好重复的，就将flag置位False
+
+        return head
+
+
     def printLink(self,head):
         node = head
         while node:
@@ -61,15 +88,16 @@ class Solution(object):
 if __name__ == "__main__":
     head = ListNode(1)
     node = head
-    for i in [2,3,4,5,6,7,8]:
+    for i in [1,2,3,5,6,8,8]:
         node.next = ListNode(i)
         node = node.next
     node = head
     while node.next!=None:
         node = node.next
     S = Solution()
+    # head = None
     S.printLink(head)
-    head = S.deleteNodeO1(head,node)
+    head = S.sortedDuplicatedElements(head)
     S.printLink(head)
     print("ok")
 
