@@ -37,6 +37,22 @@ class Solution:
                 pHead1 = curr2
         return pHead1
 
+    # 递归处理
+    def recursionMerge(self,pHead1,pHead2):
+        if not pHead1:
+            return pHead2
+        if not pHead2:
+            return pHead1
+        pMerge = None
+        if pHead1.val <= pHead2.val:
+            pMerge = pHead1
+            pMerge.next = self.recursionMerge(pHead1.next,pHead2)
+        else:
+            pMerge = pHead2
+            pMerge.next = self.recursionMerge(pHead1,pHead2.next)
+        return pMerge
+
+
     def printList(self,head):
         node = head
         while node:
@@ -59,7 +75,7 @@ if __name__ == "__main__":
 
     S = Solution()
     # head1 = None
-    head = S.Merge(head1,head2)
+    head = S.recursionMerge(head1,head2)
     S.printList(head)
 
 
