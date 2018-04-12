@@ -10,6 +10,8 @@ class Solution():
         '''
         B = [0]
         n = len(nums)
+        if n == 0:
+            return len(B)-1
         B.append(nums[0])
         for i in range(1,n):
             # 二分查找插入位置
@@ -34,4 +36,4 @@ class Solution():
 
 if __name__ == "__main__":
     S = Solution()
-    print(S.LIS1([ 2,1,5,3,6,4,8,9,7]))
+    print(S.LIS1([]))
