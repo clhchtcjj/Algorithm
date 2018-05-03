@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding:utf-8 -*-
 __author__ = 'CLH'
 
 
@@ -21,8 +21,8 @@ class Solution(object):
             return None
         s_node = []
         s_flag = []
-        path1 = [] # 会有重复值
-        path2 = []  # 会有重复值
+        path1 = []
+        path2 = []
         node = root
         while node or len(s_node) != 0:
             while node:
@@ -46,6 +46,7 @@ class Solution(object):
             return None
         cnt = -1
         path = None
+        # 两两组合所有可能的情况
         for p1 in path1:
             for p2 in path2:
                 tmp = 0
