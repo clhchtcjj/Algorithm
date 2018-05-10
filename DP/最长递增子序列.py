@@ -16,6 +16,7 @@ class Solution():
         for i in range(1,n):
             # 二分查找插入位置
             pos = self.binarySearch(B,nums[i],0,len(B)-1)
+            print(pos)
             if pos == len(B):
                 B.append(nums[i])
             else:
@@ -33,7 +34,6 @@ class Solution():
                 return self.binarySearch(nums,k,mid+1,t)
         return s
 
-
 if __name__ == "__main__":
     S = Solution()
-    print(S.LIS1([]))
+    print(S.LIS1([1,2,3,4,5,6,7]))
