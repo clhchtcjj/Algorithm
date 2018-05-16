@@ -15,5 +15,5 @@ class Solution(object):
                     if i == len(s): return True
                     break
 
-        for lens in range(len(rightmosts)):
+        # for lens in range(len(rightmosts)):
 
