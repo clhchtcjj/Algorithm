@@ -45,14 +45,14 @@ class Solution(object):
 
 
 
-
     def binarySearch(self,nums,target):
         if len(nums) == 0:
             return 0
         i = 0
         j = len(nums)-1
-        mid = i + (j - i) // 2
-        if nums[mid] < target: i = mid + 1
-        if nums[mid] > target: j = mid -1
-        if nums[mid] == target: return mid
+        while i <= j:
+            mid = i + (j - i) // 2
+            if nums[mid] < target: i = mid + 1
+            if nums[mid] > target: j = mid -1
+            if nums[mid] == target: return mid
         return i
